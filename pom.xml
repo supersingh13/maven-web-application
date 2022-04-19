@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Supersingh Test Release</name>
-	      <url>http://3.90.15.241:8081/repository/test_supersingh-release/</url>
+	      <url>http://35.172.118.180:8081/repository/test_supersingh-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Supersingh Test Snapshot</name>
-	      <url>http://3.90.15.241:8081/repository/test_supersingh-snapshot/</url>
+	      <url>http://35.172.118.180:8081/repository/test_supersingh-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
