@@ -2,6 +2,10 @@ node{
 
 def mavenHome = tool name: "maven 3.8.5"
 
+echo "Node name is : {$env.NODE_NAME}"
+echo "Job name is : {$env.JOB_NAME}"
+echo "Build Number is : {$env.BUILD_NUMBER}"
+
 //Checkout Code
 stage('CheckoutCode'){
   git branch: 'development', credentialsId: 'edb77690-20e8-4757-9518-53dde672e7be', url: 'https://github.com/supersingh13/maven-web-application.git'
