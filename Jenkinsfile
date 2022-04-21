@@ -46,7 +46,7 @@ stages{
   stage('DeployAppIntoTomcat'){
   steps{
   sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.190.162:/opt/apache-tomcat-9.0.50/webapps/"    
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@http://54.160.9.156/:/opt/apache-tomcat-9.0.50/webapps/"    
   }
   }
   }
@@ -56,17 +56,17 @@ stages{
 post{
 
  success{
- emailext to: 'devopstrainingblr@gmail.com,mithuntechnologies@yahoo.com',
+ emailext to: 'sujeetpal.singh@gmail.com',
           subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
           body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          replyTo: 'devopstrainingblr@gmail.com'
+          replyTo: 'sujeetpal.singh@gmail.com'
  }
  
  failure{
- emailext to: 'devopstrainingblr@gmail.com,mithuntechnologies@yahoo.com',
+ emailext to: 'sujeetpal.singh@gmail.com',
           subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
           body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          replyTo: 'devopstrainingblr@gmail.com'
+          replyTo: 'sujeetpal.singh@gmail.com'
  }
  
 }
