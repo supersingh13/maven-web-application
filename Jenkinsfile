@@ -34,4 +34,22 @@ stage('Deploy to Tomcat'){
 	}
 }
 
+post{
+
+ success{
+ emailext to: 'sujeetpal.singh@gmail.com',
+          subject: "DEVELOPMENT: Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          body: "DEVELOPMENT: Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          replyTo: 'sujeetpal.singh@gmail.com'
+ }
+ 
+ failure{
+ emailext to: 'sujeetpal.singh@gmail.com',
+          subject: "DEVELOPMENT: Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          body: "DEVELOPMENT: Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          replyTo: 'sujeetpal.singh@gmail.com'
+ }
+ 
+}	
+	
 }
