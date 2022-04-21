@@ -30,7 +30,7 @@ stages{
   sh  "mvn clean package"
   }
   }
-/*
+
  stage('ExecuteSonarQubeReport'){
   steps{
   sh  "mvn clean sonar:sonar"
@@ -43,14 +43,15 @@ stages{
   }
   }
   
-  stage('DeployAppIntoTomcat'){
-  steps{
-  sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@http://54.160.9.156/:/opt/apache-tomcat-9.0.50/webapps/"    
-  }
-  }
-  }
-  */
+  //DeployTomcat
+   stage('Deploy to Tomcat'){
+   steps{
+	sshagent(['4901b1fd-48c5-4d6b-b655-f0d5894358f7']){
+	sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.160.9.156:/opt/apache-tomcat-9.0.59/webapps"
+	}
+      }
+    }
+ 
 }//Stages Closing
 
 post{
