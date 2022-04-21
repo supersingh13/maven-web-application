@@ -1,7 +1,9 @@
 node{
 
 def mavenHome = tool name: "maven 3.8.5"
-
+	
+	
+echo "THIS IS IN TEST"
 echo "Node name is : $env.NODE_NAME"
 echo "Job name is : $env.JOB_NAME"
 echo "Build Number is : $env.BUILD_NUMBER"
