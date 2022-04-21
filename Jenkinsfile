@@ -1,7 +1,7 @@
 pipeline{
 
 agent any
-
+echo "THIS IS IN MASTER"
 tools{
 maven 'maven3.8.4'
 
