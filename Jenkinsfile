@@ -8,7 +8,7 @@ echo "Build Number is : $env.BUILD_NUMBER"
 
 //Checkout Code
 stage('CheckoutCode'){
-  git branch: 'development', credentialsId: 'edb77690-20e8-4757-9518-53dde672e7be', url: 'https://github.com/supersingh13/maven-web-application.git'
+  git branch: 'test', credentialsId: 'edb77690-20e8-4757-9518-53dde672e7be', url: 'https://github.com/supersingh13/maven-web-application.git'
 }
 
 
